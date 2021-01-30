@@ -1,0 +1,16 @@
+html, body {
+	padding: 0;
+	margin: 0;
+
+}
+h1,h2,h3 {
+	text-align: center;
+	font-weight: bold;
+}
+h1 {font-size: 54px; }
+h2 {font-size: 42px; }
+h3 {font-size: 32px; }
+p {
+	padding: 3px 5px;
+	margin: 3px 0px;
+}

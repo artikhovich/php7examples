@@ -48,6 +48,14 @@ foreach($connection->query('SELECT * FROM products') as $row) {
     echo '<p>'.$row['id'] . ' ' . $row['name'] . '</p>';
 }
 
+$id = 1;
+$stmt = $db->prepare("SELECT * FROM categories WHERE `id` = ?");
+// $stmt->execute([$id]);
+
+// while($row = $stmt->fetch(PDO::FETCH_LAZY)) {
+// 	echo 'Product name: '.$row->name;
+// }
+
 // $statement = $connection->query('SELECT * FROM products');
 // $statement = $connection->query('SELECT * FROM users');
 // $statement->setFetchMode(PDO::FETCH_CLASS, ‘Product’);
