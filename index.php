@@ -4,7 +4,9 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>php7 Examples</title>
 </head><body>
-	<?php
+<?php
+require_once 'includes/login.php';
+
 print '<h3>php out very well</h3>';
 
 class Product {
@@ -41,20 +43,19 @@ $soup = new Entree;
 $soup->name = 'Chiken Soup';
 $soup->ingredients = array('chicken','water','fruits');
 */
+// echo "host: " . $host ."\r\n<br />DB: " . $db;
 
-$connection = new PDO('mysql:host=localhost;dbname=restapi_db;charset=utf8', 'admin', '12345');
-
-foreach($connection->query('SELECT * FROM products') as $row) {
+foreach($conn->query('SELECT * FROM products') as $row) {
     echo '<p>'.$row['id'] . ' ' . $row['name'] . '</p>';
 }
 
-$id = 1;
-$stmt = $db->prepare("SELECT * FROM categories WHERE `id` = ?");
-// $stmt->execute([$id]);
+$id = 3;
+$stmt = $conn->prepare("SELECT * FROM categories WHERE `id` = ?");
+$stmt->execute([$id]);
 
-// while($row = $stmt->fetch(PDO::FETCH_LAZY)) {
-// 	echo 'Product name: '.$row->name;
-// }
+while($row = $stmt->fetch(PDO::FETCH_LAZY)) {
+ 	echo '<h3>Product name: '.$row->name . "</h3>";
+ }
 
 // $statement = $connection->query('SELECT * FROM products');
 // $statement = $connection->query('SELECT * FROM users');
