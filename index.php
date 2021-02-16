@@ -1,4 +1,5 @@
 <!DOCTYPE html><html><head>
+	<link rel=icon type=image/ico href=favicon.ico>
 	<link rel="stylesheet" type="text/css" href="app/css/style.css">
 	<title>php7 Examples</title>
 </head><body>
