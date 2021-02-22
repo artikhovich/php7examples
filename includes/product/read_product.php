@@ -1,5 +1,5 @@
 <?php
-header("Access-Control-Allow_Origin: *");
+header("Access-Control-Allow-Origin: *");
 header("Content-Type:application/json; charset=UTF-8");
 
 include_once '../config/login.php';

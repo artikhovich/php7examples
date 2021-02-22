@@ -5,5 +5,5 @@
 </head><body>
 <div id="app"></div>
 <script src="app/js/jquery.min.js"></script>
-<script src="app/js/app.js"></script>
+<script type="module" src="app/js/app.js"></script>
 </body></html>
