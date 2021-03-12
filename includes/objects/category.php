@@ -11,8 +11,19 @@ class Category{
 public function __construct($db){
 		$this->conn=$db;
 	}
-	function read(){
-		echo 'id, name, description, created, modified';
+public function readAll(){
+	$query = "SELECT
+		id, name, description
+		FROM
+		" . $this->table_name . "
+		ORDER BY name";
+		
+		$stmt = $this->conn->prepare($query);
+		$stmt->execute();
+		return $stmt;
+	
+		// echo 'id, name, description, created, modified';
 	}
 }
+
 ?>
