@@ -49,6 +49,32 @@ class Product {
 		$this->category_id = $row['category_id'];
 		$this->category_name = $row['category_name'];
 	}
+
+	function create(){
+		$query = "INSERT INTO
+		" . $this->table_name ."
+		SET
+		name=:name, description=:description, price=:price, category_id=:category_id, created=:created, modified=:modified";
+
+		$stmt = $this->conn->prepare($query);
+		$this->name=htmlspecialchars(strip_tags($this->name));
+		$this->description=htmlspecialchars(strip_tags($this->description));
+		$this->price=htmlspecialchars(strip_tags($this->price));
+		$this->category_id=htmlspecialchars(strip_tags($this->category_id));
+
+		$stmt->bindParam(":name", $this->name);
+		$stmt->bindParam(":description", $this->description);
+		$stmt->bindParam(":price", $this->price);
+		$stmt->bindParam(":category_id", $this->category_id);
+		$stmt->bindParam(":created", $this->created);
+		$stmt->bindParam(":modified", $this->created);
+
+		if($stmt->execute()) {
+			return true;
+		}
+		
+		return false;
+	}
 }
 //echo 'one object reading';
 ?>

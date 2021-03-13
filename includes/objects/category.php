@@ -13,7 +13,7 @@ public function __construct($db){
 	}
 public function readAll(){
 	$query = "SELECT
-		id, name, description
+		id, name, description, created, modified
 		FROM
 		" . $this->table_name . "
 		ORDER BY name";

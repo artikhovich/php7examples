@@ -14,8 +14,24 @@ class ReadCategories{
 
 	public function getAllCategories(){
 		$num=$this->stmt->rowCount();
+
 		if($num>0) {
-			$categories_arr=array("message"=>"List Of Categories: " . $num);
+
+			$categories_arr=array();
+			$categories_arr["records"]=array();
+			while($row=$this->stmt->fetch(PDO::FETCH_ASSOC)){
+				extract($row);
+				$categories_item=array(
+					"id"=>$id,
+					"name"=>$name,
+					"description"=>$description,
+					"created"=>$created,
+					"modified"=>$modified
+				);
+				array_push($categories_arr["records"], $categories_item);
+			}
+
+			// $categories_arr=array("message"=>"List Of Categories: " . $num);
 			http_response_code(200);
 			return $categories_arr;
 		}
