@@ -14,3 +14,63 @@ p {
 	padding: 3px 5px;
 	margin: 3px 0px;
 }
+td.form-collumn {
+    padding: 5px 3px;
+    border: solid 1px #60b33e;
+}
+
+button.btn.form {
+    border: none;
+    margin: 0px 2px;
+    padding: 2px 7px;
+    height: 22px;
+    width: 80px;
+}
+
+button.btn.show-table, button.create-product {
+    height: 32px;
+    border-radius: 3px;
+    width: 150px;
+    margin: 12px 12px;
+    padding: 7px 5px;
+    border: solid 1px #808000;
+    font-size: 12px;
+    background-color: #218400;
+    color: #ffffff;
+}
+
+button.read-one-product {
+	background-color: #cab23d;color: #000000;
+	}
+button.update-one-product {
+	background-color: #41ae3a;color: #ffffff;
+	}
+button.delete-one-product {
+	background-color: #c82f1f;color: #ffffff;
+	}
+
+form#create-product-form {
+	width: 270px;
+}
+
+form#create-product-form h3 {
+    margin-bottom: 3px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    color: red;
+    text-align: center;
+    align-content: center;
+    display: block;
+}
+
+form#create-product-form table{
+    width: 450px;
+    background-color: #cfa682;
+    padding: 10px;
+    margin: 10px;
+}
+
+td .form-control {
+    padding: 3px;
+    width: 270px;
+}
